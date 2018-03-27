@@ -1,0 +1,15 @@
+[Unit]
+Description=Starts a java server which exposes DS18B20 temperature readings
+
+[Service]
+User=pi
+# The configuration file application.properties should be here:
+WorkingDirectory=/home/pi/temperature_server
+ExecStart=/usr/bin/java -Xmx256m -jar java -Xmx256m -jar raspberry-pi-temperature-server-1.0-SNAPSHOT-jar-with-dependencies.jar
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
