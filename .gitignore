@@ -2,6 +2,10 @@
 # Compiled class file
 *.class
 
+# output folder
+target/
+
+# IntelliJ stuffs
 .idea/
 
 # Log file
